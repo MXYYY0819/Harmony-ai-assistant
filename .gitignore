@@ -1,0 +1,9 @@
+target/
+.m2/
+*.log
+
+# 内部任务与审查说明，不入库
+SPEC.md
+TASK.md
+REVIEW.md
+FIX.md
