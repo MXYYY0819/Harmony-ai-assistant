@@ -1,9 +1,18 @@
+# ---- Java / Maven ----
 target/
 .m2/
 *.log
 
-# 内部任务与审查说明，不入库
-SPEC.md
-TASK.md
-REVIEW.md
-FIX.md
+# ---- ArkTS / DevEco ----
+build/
+.hvigor/
+oh_modules/
+local.properties
+agconnect-services.json
+.preview/
+.idea/
+*.iml
+
+# ---- OS ----
+.DS_Store
+Thumbs.db

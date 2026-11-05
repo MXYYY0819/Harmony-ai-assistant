@@ -1,8 +1,12 @@
 * text=auto
 
 *.java text eol=lf
+*.ets text eol=lf
+*.ts text eol=lf
 *.md text eol=lf
 *.yml text eol=lf
+*.json5 text eol=lf
+*.json text eol=lf
 *.sql text eol=lf
 *.sh text eol=lf
 mvnw text eol=lf
