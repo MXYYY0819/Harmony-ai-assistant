@@ -1,0 +1,40 @@
+@baseUrl = http://localhost:8080
+
+### Login (JetBrains HTTP Client response handler)
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{"username":"demo","password":"demo123"}
+
+> {% client.global.set("token", response.body.data.token); %}
+
+### Create conversation
+POST {{baseUrl}}/conversation
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"title":"Mock SSE demo","modelCode":"mock"}
+
+> {% client.global.set("conversationId", response.body.data); %}
+
+### List
+GET {{baseUrl}}/conversation/list
+Authorization: Bearer {{token}}
+
+### Stream: expect 20 deltas approximately 500ms apart, then done
+POST {{baseUrl}}/chat/completions
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"conversationId":{{conversationId}},"modelCode":"mock","content":"Hello"}
+
+### Messages
+GET {{baseUrl}}/conversation/{{conversationId}}/messages?page=1&size=20
+Authorization: Bearer {{token}}
+
+### Delete
+DELETE {{baseUrl}}/conversation/{{conversationId}}
+Authorization: Bearer {{token}}
+
+### No token: HTTP 200, body.status=401
+GET {{baseUrl}}/conversation/list
