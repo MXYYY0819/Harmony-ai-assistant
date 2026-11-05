@@ -24,25 +24,7 @@
 
 ## 系统架构
 
-```mermaid
-flowchart LR
-    subgraph Client[鸿蒙客户端 · ArkTS/ArkUI]
-        UI[页面与状态管理] --> NET[统一网络层]
-    end
-    NET -->|HTTP + JWT| GW
-    subgraph Server[服务端网关 · Spring Boot]
-        GW[JwtInterceptor] --> CTL[Controller]
-        CTL --> SVC[Service]
-        SVC --> REG[ModelProviderRegistry]
-        SVC --> DB[(MySQL / H2)]
-    end
-    REG --> P1[OpenAI]
-    REG --> P2[GLM]
-    REG --> P3[DeepSeek]
-    REG --> P4[Mock]
-    P1 & P2 & P3 -->|HTTP + SSE| UP[上游模型 API]
-    SVC -->|SseEmitter| NET
-```
+![系统架构](docs/architecture.jpg)
 
 一次对话的链路：客户端带 JWT 发起请求 → 拦截器校验身份 → 校验会话归属 → 取历史上下文并截断 → 落库用户消息 → 按 `modelCode` 路由到对应模型适配器 → 消费上游流式响应并转换成统一事件推给客户端 → 事务内落库回答并更新会话时间。
 
