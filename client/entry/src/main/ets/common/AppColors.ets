@@ -4,8 +4,8 @@ export default class AppColors {
     ResourceColor,
     number
   ]> = [
-    [0xFF035493, 0.0],
-    [0xFF035493,0.5],
-    [0xFFCAEEFF,1],
+    [0xFF0E7490, 0.0],
+    [0xFF0E7490, 0.5],
+    [0xFF99F6E4, 1],
   ];
 }

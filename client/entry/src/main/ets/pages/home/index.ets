@@ -21,7 +21,7 @@ export struct HomeComponent {
   @Builder
   _navTab() {
     Row() {
-      Image($r("app.media.yunmoai_log"))
+      Image($r("app.media.app_logo"))
         .height(20)
       Row() {
         Text("PRO")
@@ -34,7 +34,7 @@ export struct HomeComponent {
             top: 5,
             bottom: 5
           })
-          .backgroundColor($r("app.color.primary_blue"))
+          .backgroundColor($r("app.color.primary_accent"))
           .borderRadius(10)
           .margin({ right: 10 })
           .onClick((e) => {
@@ -63,8 +63,8 @@ export struct HomeComponent {
   @Builder
   _banner() {
     Swiper(this.swiperController) {
-      Image($r("app.media.banner_baidu_cn")).borderRadius(12)
-      Image($r("app.media.banner_ai_draw")).borderRadius(12)
+      Image($r("app.media.banner_models")).borderRadius(12)
+      Image($r("app.media.banner_switch")).borderRadius(12)
     }
     .height(160)
     .indicator(true)
@@ -85,7 +85,7 @@ export struct HomeComponent {
     Swiper() {
       Row() {
         Image($r("app.media.announce")).height(20).margin({ right: 8 })
-        Text("注册新账户立即赠送5Credits")
+        Text("多模型统一入口，一个对话页切换模型")
           .fontSize(14)
           .fontColor(0xFFFFFF)
           .alignRules({
@@ -96,7 +96,7 @@ export struct HomeComponent {
 
       Row() {
         Image($r("app.media.announce")).height(20).margin({ right: 8 })
-        Text("邀请好友一起玩转YunMo")
+        Text("支持 GPT、GLM 与 DeepSeek，按场景选模型")
           .fontSize(14)
           .fontColor(0xFFFFFF)
           .alignRules({
@@ -121,9 +121,9 @@ export struct HomeComponent {
    * AI应用列表
    */
   _aiApplicationList: AiApplicationBean[] = [
-    new AiApplicationBean("Chat聊天", "https://image.yunmonitor.com/yunmo-ai/chat_a_1.jpg"),
-    new AiApplicationBean("AI创作", "https://image.yunmonitor.com/yunmo-ai/ff_1.png"),
-    new AiApplicationBean("Ai角色", "https://image.yunmonitor.com/yunmo-ai/ff_2.png")
+    new AiApplicationBean("对话", $r("app.media.app_chat")),
+    new AiApplicationBean("创作", $r("app.media.app_create")),
+    new AiApplicationBean("角色", $r("app.media.app_role"))
   ]
 
   @Builder

@@ -44,7 +44,7 @@ export struct ChatComponent {
           })
           .width(120)
           .height(60)
-        Image($r("app.media.yunmoai_log"))
+        Image($r("app.media.app_logo"))
           .height(20)
       }
       .width("100%")

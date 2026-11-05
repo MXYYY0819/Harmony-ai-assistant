@@ -2,13 +2,13 @@ import {GptRole} from "./GptRole"
 
 export  class AiApplicationBean {
 
-  constructor(title:string,logo:string) {
+  constructor(title:string,logo:ResourceStr) {
     this.title = title
     this.logo = logo
   }
 
   public title: string;
-  public logo: string;
+  public logo: ResourceStr;
 }
 
 export class CategoryApplication {

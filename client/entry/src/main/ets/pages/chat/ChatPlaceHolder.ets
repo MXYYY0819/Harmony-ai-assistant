@@ -5,9 +5,9 @@ export struct ChatPlaceHolder {
     string,
     string,
   ]> = [
-    [$r("app.media.sun"), "请帮我查询今日前十热门话题", "如何写一段敬酒词"],
-    [$r("app.media.cloud"), "写一篇感人的童年往事", "推荐一部爱情高分电影电影"],
-    [$r("app.media.flash"), "帮我预测一下今日星运", "如何处理于上级的关系"],
+    [$r("app.media.sun"), "解释一下什么是幂等，举个例子", "帮我写一个 Spring Boot 接口示例"],
+    [$r("app.media.cloud"), "这段 ArkTS 代码为什么编译不过", "帮我润色一封英文邮件"],
+    [$r("app.media.flash"), "总结一下这份文档的要点", "推荐几本分布式系统入门书"],
   ];
 
   build() {

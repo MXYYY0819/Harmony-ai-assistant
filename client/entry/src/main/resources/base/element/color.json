@@ -9,16 +9,16 @@
       "value": "#000000"
     },
     {
-      "name": "primary_blue",
-      "value": "#FF2856F9"
+      "name": "primary_accent",
+      "value": "#FF14B8A6"
     },
     {
       "name": "base_color",
-      "value": "#FF1A1B1F"
+      "value": "#FF151A20"
     },
     {
       "name": "circle_color",
-      "value": "#FF323F42"
+      "value": "#FF2A3B42"
     }
   ]
 }
